@@ -42,7 +42,7 @@ var _export
     KEY_SAVE: 'save',
     DEFAULT_NUMBER: 1000,
     DEFAULT_URL: 'http://localhost:8080/{i}',
-    DEFAULT_INTERVAL: 1000,
+    DEFAULT_INTERVAL: 0,
     DEBUG,
     storageArea,
     debug,
