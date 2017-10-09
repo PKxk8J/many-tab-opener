@@ -1,0 +1,24 @@
+{
+  "debug": {
+    "message": "debug",
+    "description": "Set 'debug' to display debug log"
+  },
+  "name": {
+    "message": "Many Tab Opener"
+  },
+  "number": {
+    "message": "The number of tabs"
+  },
+  "url": {
+    "message": "URL of tabs"
+  },
+  "interval": {
+    "message": "Interval between tab opens"
+  },
+  "millisecond": {
+    "message": "ms"
+  },
+  "save": {
+    "message": "Save"
+  }
+}
