@@ -15,6 +15,9 @@
   "interval": {
     "message": "Interval between tab opens"
   },
+  "pinned": {
+    "message": "Whether tabs are pinned"
+  },
   "millisecond": {
     "message": "ms"
   },

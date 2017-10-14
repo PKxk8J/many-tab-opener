@@ -8,22 +8,25 @@ const {
   KEY_NUMBER,
   KEY_URL,
   KEY_INTERVAL,
+  KEY_PINNED,
   KEY_MILLISECOND,
   KEY_SAVE,
   DEFAULT_NUMBER,
   DEFAULT_URL,
   DEFAULT_INTERVAL,
+  DEFAULT_PINNED,
   debug,
   onError
 } = common
 
-const LABEL_KEYS = [KEY_NUMBER, KEY_URL, KEY_INTERVAL, KEY_MILLISECOND, KEY_SAVE]
+const LABEL_KEYS = [KEY_NUMBER, KEY_URL, KEY_INTERVAL, KEY_MILLISECOND, KEY_PINNED, KEY_SAVE]
 
 /*
  * {
  *   "number": 1000,
  *   "url": "https://example.com/#",
- *   "interval": 1000
+ *   "interval": 1000,
+ *   "pinned": false
  * }
  */
 
@@ -35,12 +38,14 @@ async function restore () {
   const {
     [KEY_NUMBER]: number = DEFAULT_NUMBER,
     [KEY_URL]: url = DEFAULT_URL,
-    [KEY_INTERVAL]: interval = DEFAULT_INTERVAL
+    [KEY_INTERVAL]: interval = DEFAULT_INTERVAL,
+    [KEY_PINNED]: pinned = DEFAULT_PINNED
   } = data
 
   document.getElementById(KEY_NUMBER).value = number
   document.getElementById(KEY_URL).value = url
   document.getElementById(KEY_INTERVAL).value = interval
+  document.getElementById(KEY_PINNED).checked = pinned
 }
 
 // 設定を保存する
@@ -48,11 +53,13 @@ async function save () {
   const number = document.getElementById(KEY_NUMBER).value
   const url = document.getElementById(KEY_URL).value
   const interval = document.getElementById(KEY_INTERVAL).value
+  const pinned = document.getElementById(KEY_PINNED).checked
 
   const data = {
     [KEY_NUMBER]: number,
     [KEY_URL]: url,
-    [KEY_INTERVAL]: interval
+    [KEY_INTERVAL]: interval,
+    [KEY_PINNED]: pinned
   }
   // 古い形式のデータを消す
   await storageArea.clear()
